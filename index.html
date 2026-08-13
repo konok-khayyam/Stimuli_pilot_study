@@ -1,1 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Video Perception Study</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+      background: #f5f7fa;
+      color: #222;
+      min-height: 100vh;
+    }
+
+    .page-container {
+      width: 100%;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+    }
+
+    .content-card {
+      width: 100%;
+      max-width: 760px;
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 42px 46px;
+      box-shadow:
+        0 4px 18px rgba(0, 0, 0, 0.08);
+    }
+
+    .progress-wrapper {
+      margin-bottom: 32px;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 7px;
+      background: #e5e7eb;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      width: 33%;
+      height: 100%;
+      background: #333;
+      border-radius: 10px;
+    }
+
+    .progress-text {
+      margin-top: 9px;
+      margin-bottom: 0;
+      font-size: 13px;
+      color: #777;
+    }
+
+    .page-title {
+      margin: 0 0 14px;
+      font-size: 32px;
+      line-height: 1.25;
+      font-weight: 700;
+    }
+
+    .page-description {
+      font-size: 16px;
+      line-height: 1.65;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    .section-title {
+      margin: 0 0 10px;
+      font-size: 19px;
+      font-weight: 650;
+    }
+
+    .section-text {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.65;
+      color: #555;
+    }
+
+    .notice {
+      margin-top: 24px;
+      padding: 18px 20px;
+      background: #f7f7f7;
+      border-left: 4px solid #555;
+      border-radius: 6px;
+    }
+
+    .notice-title {
+      margin: 0 0 7px;
+      font-size: 16px;
+      font-weight: 650;
+    }
+
+    .notice-text {
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .consent-section {
+      margin-top: 30px;
+    }
+
+    .consent-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 17px;
+      cursor: pointer;
+    }
+
+    .consent-item input {
+      width: 18px;
+      height: 18px;
+      margin-top: 3px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .consent-item label {
+      font-size: 15px;
+      line-height: 1.55;
+      color: #444;
+      cursor: pointer;
+    }
+
+    .button-container {
+      margin-top: 34px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .primary-button {
+      border: none;
+      border-radius: 8px;
+      padding: 13px 28px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      background: #222;
+      color: #fff;
+      transition: opacity 0.2s ease;
+    }
+
+    .primary-button:hover:not(:disabled) {
+      opacity: 0.85;
+    }
+
+    .primary-button:disabled {
+      background: #c7c7c7;
+      cursor: not-allowed;
+    }
+
+    .required-note {
+      margin-top: 18px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    @media (max-width: 600px) {
+
+      .page-container {
+        padding: 20px 14px;
+      }
+
+      .content-card {
+        padding: 30px 22px;
+        border-radius: 12px;
+      }
+
+      .page-title {
+        font-size: 27px;
+      }
+
+      .page-description {
+        font-size: 15px;
+      }
+
+      .button-container {
+        justify-content: stretch;
+      }
+
+      .primary-button {
+        width: 100%;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="page-container">
+
+    <div class="content-card">
+
+      <!-- ============================= -->
+      <!-- PROGRESS -->
+      <!-- ============================= -->
+
+      <div class="progress-wrapper">
+
+        <div class="progress-bar">
+
+          <div class="progress-fill"></div>
+
+        </div>
+
+        <p class="progress-text">
+          Step 1 of 3 — Welcome
+        </p>
+
+      </div>
+
+
+      <!-- ============================= -->
+      <!-- TITLE -->
+      <!-- ============================= -->
+
+      <h1 class="page-title">
+        Video Perception Study
+      </h1>
+
+
+      <p class="page-description">
+
+        Thank you for your interest in participating.
+
+        In this short study, you will be asked to watch
+        one short video and answer a few questions about
+        your perception of the video.
+
+        The study should take approximately
+        3–5 minutes to complete.
+
+      </p>
+
+
+      <!-- ============================= -->
+      <!-- ABOUT THE STUDY -->
+      <!-- ============================= -->
+
+      <div class="section">
+
+        <h2 class="section-title">
+          About the study
+        </h2>
+
+        <p class="section-text">
+
+          The purpose of this study is to understand how
+          people perceive and evaluate online video content.
+
+          You will be shown one video and asked to provide
+          your impressions of it afterward.
+
+        </p>
+
+      </div>
+
+
+      <!-- ============================= -->
+      <!-- VOLUNTARY PARTICIPATION -->
+      <!-- ============================= -->
+
+      <div class="section">
+
+        <h2 class="section-title">
+          Your participation
+        </h2>
+
+        <p class="section-text">
+
+          Participation is voluntary. You may choose not
+          to participate or stop participating at any time.
+          There are no right or wrong answers. We are
+          interested in your personal impressions of the
+          video you are shown.
+
+        </p>
+
+      </div>
+
+
+      <!-- ============================= -->
+      <!-- CONTENT NOTICE -->
+      <!-- ============================= -->
+
+      <div class="notice">
+
+        <p class="notice-title">
+          Content notice
+        </p>
+
+        <p class="notice-text">
+
+          The video may contain discussion or imagery
+          relating to immigration, social issues, or other
+          potentially sensitive topics. Please consider
+          this before deciding whether to participate.
+
+        </p>
+
+      </div>
+
+
+      <!-- ============================= -->
+      <!-- CONSENT -->
+      <!-- ============================= -->
+
+      <div class="consent-section">
+
+        <h2 class="section-title">
+          Consent
+        </h2>
+
+
+        <div class="consent-item">
+
+          <input
+            type="checkbox"
+            id="consent1"
+          >
+
+          <label for="consent1">
+
+            I have read and understood the information
+            provided above.
+
+          </label>
+
+        </div>
+
+
+        <div class="consent-item">
+
+          <input
+            type="checkbox"
+            id="consent2"
+          >
+
+          <label for="consent2">
+
+            I understand that participation is voluntary
+            and that I may stop participating at any time.
+
+          </label>
+
+        </div>
+
+
+        <div class="consent-item">
+
+          <input
+            type="checkbox"
+            id="consent3"
+          >
+
+          <label for="consent3">
+
+            I agree to participate in this study and allow
+            my responses to be used for research purposes.
+
+          </label>
+
+        </div>
+
+      </div>
+
+
+      <p class="required-note">
+        Please confirm all three statements to continue.
+      </p>
+
+
+      <!-- ============================= -->
+      <!-- CONTINUE -->
+      <!-- ============================= -->
+
+      <div class="button-container">
+
+        <button
+          id="continueBtn"
+          class="primary-button"
+          disabled
+        >
+          Continue
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ============================= -->
+  <!-- JAVASCRIPT -->
+  <!-- ============================= -->
+
+  <script>
+
+    const consent1 =
+      document.getElementById("consent1");
+
+    const consent2 =
+      document.getElementById("consent2");
+
+    const consent3 =
+      document.getElementById("consent3");
+
+    const continueBtn =
+      document.getElementById("continueBtn");
+
+
+    // =====================================
+    // CHECK CONSENT
+    // =====================================
+
+    function checkConsent() {
+
+      const allChecked =
+        consent1.checked &&
+        consent2.checked &&
+        consent3.checked;
+
+      continueBtn.disabled =
+        !allChecked;
+
+    }
+
+
+    consent1.addEventListener(
+      "change",
+      checkConsent
+    );
+
+    consent2.addEventListener(
+      "change",
+      checkConsent
+    );
+
+    consent3.addEventListener(
+      "change",
+      checkConsent
+    );
+
+
+    // =====================================
+    // CONTINUE
+    // =====================================
+
+    continueBtn.addEventListener(
+      "click",
+      () => {
+
+        if (
+          !consent1.checked ||
+          !consent2.checked ||
+          !consent3.checked
+        ) {
+
+          return;
+
+        }
+
+        // Store pilot consent locally
+        // Backend integration will be added later.
+
+        localStorage.setItem(
+          "pilot_consent",
+          "yes"
+        );
+
+        localStorage.setItem(
+          "pilot_consent_timestamp",
+          new Date().toISOString()
+        );
+
+        // Move to video page
+
+        window.location.replace(
+          "video.html"
+        );
+
+      }
+    );
+
+  </script>
+
+</body>
+
+</html>
