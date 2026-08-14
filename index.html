@@ -839,19 +839,22 @@
                       "application/json"
                   },
 
-                body:
-                  JSON.stringify({
+               body:
+  JSON.stringify({
 
-                    participant_id:
-                      participantId,
+    action:
+      "save_welcome",
 
-                    consent:
-                      "yes",
+    participant_id:
+      participantId,
 
-                    condition:
-                      condition
+    consent:
+      "yes",
 
-                  })
+    condition:
+      condition
+
+  })
 
               }
             );
