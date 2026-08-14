@@ -12,14 +12,18 @@
 
   <title>Video Perception Study</title>
 
+
   <style>
 
     * {
       box-sizing: border-box;
     }
 
+
     body {
+
       margin: 0;
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -27,193 +31,377 @@
         Roboto,
         Arial,
         sans-serif;
+
       background: #f5f7fa;
+
       color: #222;
+
       min-height: 100vh;
+
     }
+
 
     .page-container {
+
       width: 100%;
+
       min-height: 100vh;
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
       padding: 40px 20px;
+
     }
+
 
     .content-card {
+
       width: 100%;
+
       max-width: 760px;
+
       background: #ffffff;
+
       border-radius: 14px;
+
       padding: 42px 46px;
+
       box-shadow:
         0 4px 18px rgba(0, 0, 0, 0.08);
+
     }
+
+
+    /* ============================= */
+    /* PROGRESS */
+    /* ============================= */
 
     .progress-wrapper {
+
       margin-bottom: 32px;
+
     }
+
 
     .progress-bar {
+
       width: 100%;
+
       height: 7px;
+
       background: #e5e7eb;
+
       border-radius: 10px;
+
       overflow: hidden;
+
     }
+
 
     .progress-fill {
+
       width: 33%;
+
       height: 100%;
+
       background: #333;
+
       border-radius: 10px;
+
     }
+
 
     .progress-text {
+
       margin-top: 9px;
+
       margin-bottom: 0;
+
       font-size: 13px;
+
       color: #777;
+
     }
+
+
+    /* ============================= */
+    /* TITLE */
+    /* ============================= */
 
     .page-title {
+
       margin: 0 0 14px;
+
       font-size: 32px;
+
       line-height: 1.25;
+
       font-weight: 700;
+
     }
+
 
     .page-description {
+
       font-size: 16px;
+
       line-height: 1.65;
+
       color: #555;
+
       margin-bottom: 30px;
+
     }
+
+
+    /* ============================= */
+    /* SECTIONS */
+    /* ============================= */
 
     .section {
+
       margin-top: 28px;
+
     }
+
 
     .section-title {
+
       margin: 0 0 10px;
+
       font-size: 19px;
+
       font-weight: 650;
+
     }
+
 
     .section-text {
+
       margin: 0;
+
       font-size: 15px;
+
       line-height: 1.65;
+
       color: #555;
+
     }
+
+
+    /* ============================= */
+    /* CONTENT NOTICE */
+    /* ============================= */
 
     .notice {
+
       margin-top: 24px;
+
       padding: 18px 20px;
+
       background: #f7f7f7;
+
       border-left: 4px solid #555;
+
       border-radius: 6px;
+
     }
+
 
     .notice-title {
+
       margin: 0 0 7px;
+
       font-size: 16px;
+
       font-weight: 650;
+
     }
+
 
     .notice-text {
+
       margin: 0;
+
       font-size: 14px;
+
       line-height: 1.6;
+
       color: #555;
+
     }
+
+
+    /* ============================= */
+    /* CONSENT */
+    /* ============================= */
 
     .consent-section {
+
       margin-top: 30px;
+
     }
+
 
     .consent-item {
+
       display: flex;
+
       align-items: flex-start;
+
       gap: 12px;
+
       margin-bottom: 17px;
+
       cursor: pointer;
+
     }
+
 
     .consent-item input {
+
       width: 18px;
+
       height: 18px;
+
       margin-top: 3px;
+
       flex-shrink: 0;
+
       cursor: pointer;
+
     }
+
 
     .consent-item label {
+
       font-size: 15px;
+
       line-height: 1.55;
+
       color: #444;
+
       cursor: pointer;
+
     }
+
+
+    /* ============================= */
+    /* BUTTON */
+    /* ============================= */
 
     .button-container {
+
       margin-top: 34px;
+
       display: flex;
+
       justify-content: flex-end;
+
     }
+
 
     .primary-button {
+
       border: none;
+
       border-radius: 8px;
+
       padding: 13px 28px;
+
       font-size: 15px;
+
       font-weight: 600;
+
       cursor: pointer;
+
       background: #222;
+
       color: #fff;
+
       transition: opacity 0.2s ease;
+
     }
+
 
     .primary-button:hover:not(:disabled) {
+
       opacity: 0.85;
+
     }
+
 
     .primary-button:disabled {
+
       background: #c7c7c7;
+
       cursor: not-allowed;
+
     }
 
+
     .required-note {
+
       margin-top: 18px;
+
       font-size: 13px;
+
       color: #888;
+
     }
+
+
+    /* ============================= */
+    /* MOBILE */
+    /* ============================= */
 
     @media (max-width: 600px) {
 
       .page-container {
+
         padding: 20px 14px;
+
       }
+
 
       .content-card {
+
         padding: 30px 22px;
+
         border-radius: 12px;
+
       }
+
 
       .page-title {
+
         font-size: 27px;
+
       }
+
 
       .page-description {
+
         font-size: 15px;
+
       }
+
 
       .button-container {
+
         justify-content: stretch;
+
       }
 
+
       .primary-button {
+
         width: 100%;
+
       }
 
     }
@@ -222,11 +410,15 @@
 
 </head>
 
+
 <body>
+
 
   <div class="page-container">
 
+
     <div class="content-card">
+
 
       <!-- ============================= -->
       <!-- PROGRESS -->
@@ -294,7 +486,7 @@
 
 
       <!-- ============================= -->
-      <!-- VOLUNTARY PARTICIPATION -->
+      <!-- PARTICIPATION -->
       <!-- ============================= -->
 
       <div class="section">
@@ -307,6 +499,7 @@
 
           Participation is voluntary. You may choose not
           to participate or stop participating at any time.
+
           There are no right or wrong answers. We are
           interested in your personal impressions of the
           video you are shown.
@@ -403,245 +596,34 @@
 
 
       <p class="required-note">
+
         Please confirm all three statements to continue.
+
       </p>
 
 
       <!-- ============================= -->
-      <!-- CONTINUE -->
+      <!-- CONTINUE BUTTON -->
       <!-- ============================= -->
 
-      <script>
+      <div class="button-container">
 
-/*
-==========================================
-RANDOM VIDEO ASSIGNMENT
-==========================================
-*/
+        <button
+          id="continueBtn"
+          class="primary-button"
+          disabled
+        >
 
-const continueBtn =
-  document.getElementById(
-    "continueBtn"
-  );
+          Continue
 
-const consent1 =
-  document.getElementById(
-    "consent1"
-  );
+        </button>
 
-const consent2 =
-  document.getElementById(
-    "consent2"
-  );
+      </div>
 
-const consent3 =
-  document.getElementById(
-    "consent3"
-  );
 
+    </div>
 
-/*
-==========================================
-CHECK CONSENT
-==========================================
-*/
-
-function checkConsent() {
-
-  const allChecked =
-    consent1.checked &&
-    consent2.checked &&
-    consent3.checked;
-
-  continueBtn.disabled =
-    !allChecked;
-
-}
-
-
-consent1.addEventListener(
-  "change",
-  checkConsent
-);
-
-consent2.addEventListener(
-  "change",
-  checkConsent
-);
-
-consent3.addEventListener(
-  "change",
-  checkConsent
-);
-
-
-/*
-==========================================
-CONTINUE
-==========================================
-*/
-
-continueBtn.addEventListener(
-  "click",
-  () => {
-
-    // =====================================
-    // SAFETY CHECK
-    // =====================================
-
-    if (
-      !consent1.checked ||
-      !consent2.checked ||
-      !consent3.checked
-    ) {
-
-      return;
-
-    }
-
-
-    // =====================================
-    // GENERATE PARTICIPANT ID
-    // =====================================
-
-    const participantId =
-      crypto.randomUUID();
-
-
-    // =====================================
-    // RANDOM ASSIGNMENT
-    // =====================================
-
-    const randomNumber =
-      Math.random();
-
-
-    let condition;
-
-    let video;
-
-
-    if (
-      randomNumber < 0.5
-    ) {
-
-      // BBC CONTROL
-
-      condition =
-        "bbc";
-
-      video =
-        "BBC";
-
-    }
-
-    else {
-
-      // PROVOCATIVE
-
-      condition =
-        "prov";
-
-      video =
-        "PROV";
-
-    }
-
-
-    // =====================================
-    // ASSIGNMENT TIMESTAMP
-    // =====================================
-
-    const assignmentTimestamp =
-      new Date().toISOString();
-
-
-    // =====================================
-    // STORE PARTICIPANT DATA
-    // =====================================
-
-    localStorage.setItem(
-      "pilot_participant_id",
-      participantId
-    );
-
-    localStorage.setItem(
-      "pilot_condition",
-      condition
-    );
-
-    localStorage.setItem(
-      "pilot_video",
-      video
-    );
-
-    localStorage.setItem(
-      "pilot_assignment_timestamp",
-      assignmentTimestamp
-    );
-
-
-    // =====================================
-    // STORE CONSENT
-    // =====================================
-
-    localStorage.setItem(
-      "pilot_consent",
-      "yes"
-    );
-
-    localStorage.setItem(
-      "pilot_consent_timestamp",
-      assignmentTimestamp
-    );
-
-
-    // =====================================
-    // REDIRECT
-    // =====================================
-
-    if (
-      condition === "bbc"
-    ) {
-
-      window.location.replace(
-        "video1.html"
-      );
-
-    }
-
-    else {
-
-      window.location.replace(
-        "video2.html"
-      );
-
-    }
-
-  }
-);
-
-
-/*
-==========================================
-BLOCK BACK NAVIGATION
-==========================================
-*/
-
-history.pushState(
-  null,
-  null,
-  location.href
-);
-
-window.onpopstate =
-  function () {
-
-    history.go(1);
-
-  };
-
-</script>
+  </div>
 
 
   <!-- ============================= -->
@@ -650,17 +632,41 @@ window.onpopstate =
 
   <script>
 
+
+    // =====================================
+    // ELEMENTS
+    // =====================================
+
     const consent1 =
-      document.getElementById("consent1");
+      document.getElementById(
+        "consent1"
+      );
+
 
     const consent2 =
-      document.getElementById("consent2");
+      document.getElementById(
+        "consent2"
+      );
+
 
     const consent3 =
-      document.getElementById("consent3");
+      document.getElementById(
+        "consent3"
+      );
+
 
     const continueBtn =
-      document.getElementById("continueBtn");
+      document.getElementById(
+        "continueBtn"
+      );
+
+
+    // =====================================
+    // N8N WEBHOOK
+    // =====================================
+
+    const webhookUrl =
+      "https://n8n.media.tuwien.ac.at/webhook/2dd3fbb8-eda9-4683-9a0d-efb750c06225";
 
 
     // =====================================
@@ -669,26 +675,36 @@ window.onpopstate =
 
     function checkConsent() {
 
+
       const allChecked =
+
         consent1.checked &&
         consent2.checked &&
         consent3.checked;
 
+
       continueBtn.disabled =
         !allChecked;
 
+
     }
 
+
+    // =====================================
+    // CONSENT LISTENERS
+    // =====================================
 
     consent1.addEventListener(
       "change",
       checkConsent
     );
 
+
     consent2.addEventListener(
       "change",
       checkConsent
     );
+
 
     consent3.addEventListener(
       "change",
@@ -697,46 +713,250 @@ window.onpopstate =
 
 
     // =====================================
-    // CONTINUE
+    // CONTINUE BUTTON
     // =====================================
 
     continueBtn.addEventListener(
       "click",
-      () => {
+      async function () {
+
+
+        // =================================
+        // SAFETY CHECK
+        // =================================
 
         if (
+
           !consent1.checked ||
           !consent2.checked ||
           !consent3.checked
+
         ) {
 
           return;
 
         }
 
-        // Store pilot consent locally
-        // Backend integration will be added later.
+
+        // =================================
+        // DISABLE BUTTON
+        // =================================
+
+        continueBtn.disabled =
+          true;
+
+        continueBtn.innerText =
+          "Starting...";
+
+
+        // =================================
+        // GENERATE PARTICIPANT ID
+        // =================================
+
+        const participantId =
+          crypto.randomUUID();
+
+
+        // =================================
+        // RANDOM ASSIGNMENT
+        // =================================
+
+        let condition;
+
+
+        if (
+          Math.random() < 0.5
+        ) {
+
+          condition =
+            "bbc";
+
+        }
+
+        else {
+
+          condition =
+            "prov";
+
+        }
+
+
+        // =================================
+        // STORE LOCALLY
+        // =================================
+
+        localStorage.setItem(
+          "pilot_participant_id",
+          participantId
+        );
+
 
         localStorage.setItem(
           "pilot_consent",
           "yes"
         );
 
+
         localStorage.setItem(
-          "pilot_consent_timestamp",
-          new Date().toISOString()
+          "pilot_condition",
+          condition
         );
 
-        // Move to video page
 
-        window.location.replace(
-          "video1.html"
-        );
+        // =================================
+        // SEND DATA TO N8N
+        // =================================
+
+        try {
+
+
+          console.log(
+            "Sending participant data:",
+            {
+              participant_id:
+                participantId,
+
+              consent:
+                "yes",
+
+              condition:
+                condition
+            }
+          );
+
+
+          const response =
+            await fetch(
+              webhookUrl,
+              {
+
+                method:
+                  "POST",
+
+                headers:
+                  {
+                    "Content-Type":
+                      "application/json"
+                  },
+
+                body:
+                  JSON.stringify({
+
+                    participant_id:
+                      participantId,
+
+                    consent:
+                      "yes",
+
+                    condition:
+                      condition
+
+                  })
+
+              }
+            );
+
+
+          // =================================
+          // CHECK RESPONSE
+          // =================================
+
+          if (
+            !response.ok
+          ) {
+
+            throw new Error(
+              "n8n returned HTTP " +
+              response.status
+            );
+
+          }
+
+
+          console.log(
+            "Participant data saved successfully."
+          );
+
+
+          // =================================
+          // REDIRECT
+          // =================================
+
+          if (
+            condition === "bbc"
+          ) {
+
+            window.location.replace(
+              "video1.html"
+            );
+
+          }
+
+          else {
+
+            window.location.replace(
+              "video2.html"
+            );
+
+          }
+
+
+        }
+
+
+        // =================================
+        // ERROR
+        // =================================
+
+        catch (error) {
+
+
+          console.error(
+            "Error saving participant data:",
+            error
+          );
+
+
+          continueBtn.disabled =
+            false;
+
+
+          continueBtn.innerText =
+            "Continue";
+
+
+          alert(
+            "There was a problem starting the study. Please try again."
+          );
+
+
+        }
 
       }
     );
 
+
+    // =====================================
+    // BLOCK BACK NAVIGATION
+    // =====================================
+
+    history.pushState(
+      null,
+      null,
+      location.href
+    );
+
+
+    window.onpopstate =
+      function () {
+
+        history.go(1);
+
+      };
+
+
   </script>
+
 
 </body>
 
