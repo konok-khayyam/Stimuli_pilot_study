@@ -12,14 +12,18 @@
 
   <title>Video Evaluation</title>
 
+
   <style>
 
     * {
       box-sizing: border-box;
     }
 
+
     body {
+
       margin: 0;
+
       font-family:
         -apple-system,
         BlinkMacSystemFont,
@@ -27,185 +31,373 @@
         Roboto,
         Arial,
         sans-serif;
+
       background: #f5f7fa;
+
       color: #222;
+
       min-height: 100vh;
+
     }
+
 
     .page-container {
+
       width: 100%;
+
       min-height: 100vh;
+
       display: flex;
+
       justify-content: center;
+
       align-items: center;
+
       padding: 40px 20px;
+
     }
 
+
     .content-card {
+
       width: 100%;
+
       max-width: 800px;
+
       background: #ffffff;
+
       border-radius: 14px;
+
       padding: 40px 44px;
+
       box-shadow:
         0 4px 18px rgba(0, 0, 0, 0.08);
+
     }
+
 
     /* ============================= */
     /* PROGRESS */
     /* ============================= */
 
     .progress-wrapper {
+
       margin-bottom: 30px;
+
     }
+
 
     .progress-bar {
+
       width: 100%;
+
       height: 7px;
+
       background: #e5e7eb;
+
       border-radius: 10px;
+
       overflow: hidden;
+
     }
+
 
     .progress-fill {
+
       width: 100%;
+
       height: 100%;
+
       background: #333;
+
       border-radius: 10px;
+
     }
 
+
     .progress-text {
+
       margin-top: 9px;
+
       margin-bottom: 0;
+
       font-size: 13px;
+
       color: #777;
+
     }
+
 
     /* ============================= */
     /* TITLE */
     /* ============================= */
 
     .page-title {
+
       margin: 0 0 12px;
+
       font-size: 30px;
+
       line-height: 1.25;
+
       font-weight: 700;
+
     }
 
+
     .page-description {
+
       margin: 0 0 30px;
+
       font-size: 16px;
+
       line-height: 1.65;
+
       color: #555;
+
     }
+
 
     /* ============================= */
     /* QUESTIONS */
     /* ============================= */
 
     .question {
+
       margin-bottom: 34px;
+
     }
+
 
     .question:last-of-type {
+
       margin-bottom: 10px;
+
     }
+
 
     .question-text {
+
       margin: 0 0 16px;
+
       font-size: 17px;
+
       line-height: 1.5;
+
       font-weight: 600;
+
     }
+
+
+    /* ============================= */
+    /* AGE */
+    /* ============================= */
+
+    .age-input {
+
+      width: 100%;
+
+      max-width: 250px;
+
+      padding: 13px;
+
+      border: 1px solid #d5d7da;
+
+      border-radius: 8px;
+
+      font-size: 15px;
+
+      outline: none;
+
+    }
+
+
+    .age-input:focus {
+
+      border-color: #777;
+
+    }
+
+
+    /* ============================= */
+    /* SCALE */
+    /* ============================= */
 
     .scale-labels {
+
       display: flex;
+
       justify-content: space-between;
+
       gap: 20px;
+
       margin-bottom: 10px;
+
       font-size: 13px;
+
       color: #777;
+
     }
+
 
     .scale {
+
       display: grid;
+
       grid-template-columns:
         repeat(7, 1fr);
+
       gap: 8px;
+
     }
+
 
     .scale-option {
+
       position: relative;
+
     }
+
 
     .scale-option input {
+
       position: absolute;
+
       opacity: 0;
+
       pointer-events: none;
+
     }
 
+
     .scale-option label {
+
       display: flex;
+
       align-items: center;
+
       justify-content: center;
-      height: 48px;
+
+      min-height: 48px;
+
+      padding: 10px;
+
       border: 1px solid #d5d7da;
+
       border-radius: 8px;
+
       background: #fff;
+
       font-size: 15px;
+
       font-weight: 500;
+
       cursor: pointer;
+
       transition:
         background 0.15s ease,
         border-color 0.15s ease;
+
     }
+
 
     .scale-option label:hover {
+
       background: #f4f4f4;
+
     }
 
+
     .scale-option input:checked + label {
+
       background: #222;
+
       border-color: #222;
+
       color: #fff;
+
     }
+
+
+    /* ============================= */
+    /* GENDER */
+    /* ============================= */
+
+    .gender-scale {
+
+      display: grid;
+
+      grid-template-columns: 1fr;
+
+      gap: 8px;
+
+    }
+
 
     /* ============================= */
     /* BUTTON */
     /* ============================= */
 
     .button-container {
+
       margin-top: 34px;
+
       display: flex;
+
       justify-content: flex-end;
+
     }
+
 
     .primary-button {
+
       border: none;
+
       border-radius: 8px;
+
       padding: 13px 28px;
+
       font-size: 15px;
+
       font-weight: 600;
+
       cursor: pointer;
+
       background: #222;
+
       color: #fff;
+
       transition: opacity 0.2s ease;
+
     }
+
 
     .primary-button:hover:not(:disabled) {
+
       opacity: 0.85;
+
     }
+
 
     .primary-button:disabled {
+
       background: #c7c7c7;
+
       cursor: not-allowed;
+
     }
 
+
     .required-note {
+
       margin-top: 20px;
+
       font-size: 13px;
+
       color: #888;
+
     }
+
 
     /* ============================= */
     /* MOBILE */
@@ -214,45 +406,76 @@
     @media (max-width: 600px) {
 
       .page-container {
+
         padding: 20px 14px;
+
       }
+
 
       .content-card {
+
         padding: 28px 20px;
+
         border-radius: 12px;
+
       }
+
 
       .page-title {
+
         font-size: 26px;
+
       }
+
 
       .page-description {
+
         font-size: 15px;
+
       }
+
 
       .question-text {
+
         font-size: 16px;
+
       }
+
 
       .scale {
+
         gap: 5px;
+
       }
+
 
       .scale-option label {
-        height: 43px;
+
+        min-height: 43px;
+
         font-size: 14px;
+
       }
+
 
       .scale-labels {
+
         font-size: 12px;
+
       }
+
 
       .button-container {
+
         justify-content: stretch;
+
       }
 
+
       .primary-button {
+
         width: 100%;
+
       }
 
     }
@@ -264,9 +487,12 @@
 
 <body>
 
+
   <div class="page-container">
 
+
     <div class="content-card">
+
 
       <!-- ============================= -->
       <!-- PROGRESS -->
@@ -281,7 +507,9 @@
         </div>
 
         <p class="progress-text">
+
           Step 3 of 3 — Video evaluation
+
         </p>
 
       </div>
@@ -292,7 +520,9 @@
       <!-- ============================= -->
 
       <h1 class="page-title">
+
         Video Evaluation
+
       </h1>
 
 
@@ -301,295 +531,127 @@
         Please think about the video you just watched
         and indicate how you perceived it.
 
+        <br><br>
+
         There are no right or wrong answers. Please select
         the response that best represents your impression.
 
       </p>
 
-      <!-- ============================= -->
-<!-- DEMOGRAPHICS -->
-<!-- ============================= -->
-
-<div class="question">
-
-  <p class="question-text">
-    1. What is your age?
-  </p>
-
-  <input
-    type="number"
-    id="age"
-    name="age"
-    min="18"
-    max="100"
-    placeholder="Enter your age"
-    style="
-      width: 100%;
-      max-width: 250px;
-      padding: 13px;
-      border: 1px solid #d5d7da;
-      border-radius: 8px;
-      font-size: 15px;
-    "
-  >
-
-</div>
-
-
-<div class="question">
-
-  <p class="question-text">
-    2. What is your gender?
-  </p>
-
-  <div class="scale" style="grid-template-columns: 1fr;">
-
-    <div class="scale-option">
-      <input
-        type="radio"
-        id="gender_woman"
-        name="gender"
-        value="woman"
-      >
-      <label for="gender_woman">
-        Woman
-      </label>
-    </div>
-
-    <div class="scale-option">
-      <input
-        type="radio"
-        id="gender_man"
-        name="gender"
-        value="man"
-      >
-      <label for="gender_man">
-        Man
-      </label>
-    </div>
-
-    <div class="scale-option">
-      <input
-        type="radio"
-        id="gender_nonbinary"
-        name="gender"
-        value="non_binary"
-      >
-      <label for="gender_nonbinary">
-        Non-binary
-      </label>
-    </div>
-
-    <div class="scale-option">
-      <input
-        type="radio"
-        id="gender_prefer_not"
-        name="gender"
-        value="prefer_not_to_say"
-      >
-      <label for="gender_prefer_not">
-        Prefer not to say
-      </label>
-    </div>
-
-  </div>
-
-</div>
 
       <!-- ============================= -->
-      <!-- QUESTION 1 -->
+      <!-- AGE -->
       <!-- ============================= -->
 
       <div class="question">
 
         <p class="question-text">
-          1. How provocative or emotionally charged
-          did you find this video?
+
+          1. What is your age?
+
         </p>
 
-        <div class="scale-labels">
 
-          <span>
-            1 — Not at all
-          </span>
-
-          <span>
-            7 — Extremely
-          </span>
-
-        </div>
-
-        <div class="scale">
-
-          <div class="scale-option">
-            <input
-              type="radio"
-              id="provocativeness_1"
-              name="provocativeness"
-              value="1"
-            >
-            <label for="provocativeness_1">1</label>
-          </div>
-
-          <div class="scale-option">
-            <input
-              type="radio"
-              id="provocativeness_2"
-              name="provocativeness"
-              value="2"
-            >
-            <label for="provocativeness_2">2</label>
-          </div>
-
-          <div class="scale-option">
-            <input
-              type="radio"
-              id="provocativeness_3"
-              name="provocativeness"
-              value="3"
-            >
-            <label for="provocativeness_3">3</label>
-          </div>
-
-          <div class="scale-option">
-            <input
-              type="radio"
-              id="provocativeness_4"
-              name="provocativeness"
-              value="4"
-            >
-            <label for="provocativeness_4">4</label>
-          </div>
-
-          <div class="scale-option">
-            <input
-              type="radio"
-              id="provocativeness_5"
-              name="provocativeness"
-              value="5"
-            >
-            <label for="provocativeness_5">5</label>
-          </div>
-
-          <div class="scale-option">
-            <input
-              type="radio"
-              id="provocativeness_6"
-              name="provocativeness"
-              value="6"
-            >
-            <label for="provocativeness_6">6</label>
-          </div>
-
-          <div class="scale-option">
-            <input
-              type="radio"
-              id="provocativeness_7"
-              name="provocativeness"
-              value="7"
-            >
-            <label for="provocativeness_7">7</label>
-          </div>
-
-        </div>
+        <input
+          type="number"
+          id="age"
+          name="age"
+          class="age-input"
+          min="18"
+          max="100"
+          placeholder="Enter your age"
+        >
 
       </div>
 
 
       <!-- ============================= -->
-      <!-- QUESTION 2 -->
+      <!-- GENDER -->
       <!-- ============================= -->
 
       <div class="question">
 
         <p class="question-text">
-          2. How negative did the video feel toward
-          immigrants or immigration?
+
+          2. What is your gender?
+
         </p>
 
-        <div class="scale-labels">
 
-          <span>
-            1 — Not at all negative
-          </span>
+        <div class="gender-scale">
 
-          <span>
-            7 — Extremely negative
-          </span>
-
-        </div>
-
-        <div class="scale">
 
           <div class="scale-option">
+
             <input
               type="radio"
-              id="negativity_1"
-              name="negativity"
-              value="1"
+              id="gender_woman"
+              name="gender"
+              value="woman"
             >
-            <label for="negativity_1">1</label>
+
+            <label for="gender_woman">
+
+              Woman
+
+            </label>
+
           </div>
 
-          <div class="scale-option">
-            <input
-              type="radio"
-              id="negativity_2"
-              name="negativity"
-              value="2"
-            >
-            <label for="negativity_2">2</label>
-          </div>
 
           <div class="scale-option">
+
             <input
               type="radio"
-              id="negativity_3"
-              name="negativity"
-              value="3"
+              id="gender_man"
+              name="gender"
+              value="man"
             >
-            <label for="negativity_3">3</label>
+
+            <label for="gender_man">
+
+              Man
+
+            </label>
+
           </div>
 
-          <div class="scale-option">
-            <input
-              type="radio"
-              id="negativity_4"
-              name="negativity"
-              value="4"
-            >
-            <label for="negativity_4">4</label>
-          </div>
 
           <div class="scale-option">
+
             <input
               type="radio"
-              id="negativity_5"
-              name="negativity"
-              value="5"
+              id="gender_nonbinary"
+              name="gender"
+              value="non_binary"
             >
-            <label for="negativity_5">5</label>
+
+            <label for="gender_nonbinary">
+
+              Non-binary
+
+            </label>
+
           </div>
 
-          <div class="scale-option">
-            <input
-              type="radio"
-              id="negativity_6"
-              name="negativity"
-              value="6"
-            >
-            <label for="negativity_6">6</label>
-          </div>
 
           <div class="scale-option">
+
             <input
               type="radio"
-              id="negativity_7"
-              name="negativity"
-              value="7"
+              id="gender_prefer_not"
+              name="gender"
+              value="prefer_not_to_say"
             >
-            <label for="negativity_7">7</label>
+
+            <label for="gender_prefer_not">
+
+              Prefer not to say
+
+            </label>
+
           </div>
+
 
         </div>
 
@@ -603,93 +665,140 @@
       <div class="question">
 
         <p class="question-text">
-          3. How credible or trustworthy did the
-          source seem?
+
+          3. How provocative or emotionally charged
+          did you find this video?
+
         </p>
+
 
         <div class="scale-labels">
 
           <span>
-            1 — Not at all credible
+            1 — Not at all
           </span>
 
           <span>
-            7 — Extremely credible
+            7 — Extremely
           </span>
 
         </div>
 
+
         <div class="scale">
 
+
           <div class="scale-option">
+
             <input
               type="radio"
-              id="credibility_1"
-              name="credibility"
+              id="provocativeness_1"
+              name="provocativeness"
               value="1"
             >
-            <label for="credibility_1">1</label>
+
+            <label for="provocativeness_1">
+              1
+            </label>
+
           </div>
 
+
           <div class="scale-option">
+
             <input
               type="radio"
-              id="credibility_2"
-              name="credibility"
+              id="provocativeness_2"
+              name="provocativeness"
               value="2"
             >
-            <label for="credibility_2">2</label>
+
+            <label for="provocativeness_2">
+              2
+            </label>
+
           </div>
 
+
           <div class="scale-option">
+
             <input
               type="radio"
-              id="credibility_3"
-              name="credibility"
+              id="provocativeness_3"
+              name="provocativeness"
               value="3"
             >
-            <label for="credibility_3">3</label>
+
+            <label for="provocativeness_3">
+              3
+            </label>
+
           </div>
 
+
           <div class="scale-option">
+
             <input
               type="radio"
-              id="credibility_4"
-              name="credibility"
+              id="provocativeness_4"
+              name="provocativeness"
               value="4"
             >
-            <label for="credibility_4">4</label>
+
+            <label for="provocativeness_4">
+              4
+            </label>
+
           </div>
 
+
           <div class="scale-option">
+
             <input
               type="radio"
-              id="credibility_5"
-              name="credibility"
+              id="provocativeness_5"
+              name="provocativeness"
               value="5"
             >
-            <label for="credibility_5">5</label>
+
+            <label for="provocativeness_5">
+              5
+            </label>
+
           </div>
 
+
           <div class="scale-option">
+
             <input
               type="radio"
-              id="credibility_6"
-              name="credibility"
+              id="provocativeness_6"
+              name="provocativeness"
               value="6"
             >
-            <label for="credibility_6">6</label>
+
+            <label for="provocativeness_6">
+              6
+            </label>
+
           </div>
 
+
           <div class="scale-option">
+
             <input
               type="radio"
-              id="credibility_7"
-              name="credibility"
+              id="provocativeness_7"
+              name="provocativeness"
               value="7"
             >
-            <label for="credibility_7">7</label>
+
+            <label for="provocativeness_7">
+              7
+            </label>
+
           </div>
+
 
         </div>
 
@@ -703,8 +812,305 @@
       <div class="question">
 
         <p class="question-text">
-          4. Did this video feel AI-generated to you?
+
+          4. How negative did the video feel toward
+          immigrants or immigration?
+
         </p>
+
+
+        <div class="scale-labels">
+
+          <span>
+            1 — Not at all negative
+          </span>
+
+          <span>
+            7 — Extremely negative
+          </span>
+
+        </div>
+
+
+        <div class="scale">
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="negativity_1"
+              name="negativity"
+              value="1"
+            >
+
+            <label for="negativity_1">
+              1
+            </label>
+
+          </div>
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="negativity_2"
+              name="negativity"
+              value="2"
+            >
+
+            <label for="negativity_2">
+              2
+            </label>
+
+          </div>
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="negativity_3"
+              name="negativity"
+              value="3"
+            >
+
+            <label for="negativity_3">
+              3
+            </label>
+
+          </div>
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="negativity_4"
+              name="negativity"
+              value="4"
+            >
+
+            <label for="negativity_4">
+              4
+            </label>
+
+          </div>
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="negativity_5"
+              name="negativity"
+              value="5"
+            >
+
+            <label for="negativity_5">
+              5
+            </label>
+
+          </div>
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="negativity_6"
+              name="negativity"
+              value="6"
+            >
+
+            <label for="negativity_6">
+              6
+            </label>
+
+          </div>
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="negativity_7"
+              name="negativity"
+              value="7"
+            >
+
+            <label for="negativity_7">
+              7
+            </label>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ============================= -->
+      <!-- QUESTION 5 -->
+      <!-- ============================= -->
+
+      <div class="question">
+
+        <p class="question-text">
+
+          5. How credible or trustworthy did the
+          source seem?
+
+        </p>
+
+
+        <div class="scale-labels">
+
+          <span>
+            1 — Not at all credible
+          </span>
+
+          <span>
+            7 — Extremely credible
+          </span>
+
+        </div>
+
+
+        <div class="scale">
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="credibility_1"
+              name="credibility"
+              value="1"
+            >
+
+            <label for="credibility_1">
+              1
+            </label>
+
+          </div>
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="credibility_2"
+              name="credibility"
+              value="2"
+            >
+
+            <label for="credibility_2">
+              2
+            </label>
+
+          </div>
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="credibility_3"
+              name="credibility"
+              value="3"
+            >
+
+            <label for="credibility_3">
+              3
+            </label>
+
+          </div>
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="credibility_4"
+              name="credibility"
+              value="4"
+            >
+
+            <label for="credibility_4">
+              4
+            </label>
+
+          </div>
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="credibility_5"
+              name="credibility"
+              value="5"
+            >
+
+            <label for="credibility_5">
+              5
+            </label>
+
+          </div>
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="credibility_6"
+              name="credibility"
+              value="6"
+            >
+
+            <label for="credibility_6">
+              6
+            </label>
+
+          </div>
+
+
+          <div class="scale-option">
+
+            <input
+              type="radio"
+              id="credibility_7"
+              name="credibility"
+              value="7"
+            >
+
+            <label for="credibility_7">
+              7
+            </label>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <!-- ============================= -->
+      <!-- QUESTION 6 -->
+      <!-- ============================= -->
+
+      <div class="question">
+
+        <p class="question-text">
+
+          6. Did this video feel AI-generated to you?
+
+        </p>
+
 
         <div class="scale-labels">
 
@@ -718,77 +1124,121 @@
 
         </div>
 
+
         <div class="scale">
 
+
           <div class="scale-option">
+
             <input
               type="radio"
               id="ai_generated_1"
               name="ai_generated"
               value="1"
             >
-            <label for="ai_generated_1">1</label>
+
+            <label for="ai_generated_1">
+              1
+            </label>
+
           </div>
 
+
           <div class="scale-option">
+
             <input
               type="radio"
               id="ai_generated_2"
               name="ai_generated"
               value="2"
             >
-            <label for="ai_generated_2">2</label>
+
+            <label for="ai_generated_2">
+              2
+            </label>
+
           </div>
 
+
           <div class="scale-option">
+
             <input
               type="radio"
               id="ai_generated_3"
               name="ai_generated"
               value="3"
             >
-            <label for="ai_generated_3">3</label>
+
+            <label for="ai_generated_3">
+              3
+            </label>
+
           </div>
 
+
           <div class="scale-option">
+
             <input
               type="radio"
               id="ai_generated_4"
               name="ai_generated"
               value="4"
             >
-            <label for="ai_generated_4">4</label>
+
+            <label for="ai_generated_4">
+              4
+            </label>
+
           </div>
 
+
           <div class="scale-option">
+
             <input
               type="radio"
               id="ai_generated_5"
               name="ai_generated"
               value="5"
             >
-            <label for="ai_generated_5">5</label>
+
+            <label for="ai_generated_5">
+              5
+            </label>
+
           </div>
 
+
           <div class="scale-option">
+
             <input
               type="radio"
               id="ai_generated_6"
               name="ai_generated"
               value="6"
             >
-            <label for="ai_generated_6">6</label>
+
+            <label for="ai_generated_6">
+              6
+            </label>
+
           </div>
 
+
           <div class="scale-option">
+
             <input
               type="radio"
               id="ai_generated_7"
               name="ai_generated"
               value="7"
             >
-            <label for="ai_generated_7">7</label>
+
+            <label for="ai_generated_7">
+              7
+            </label>
+
           </div>
+
 
         </div>
 
@@ -800,7 +1250,9 @@
       <!-- ============================= -->
 
       <p class="required-note">
-        Please answer all four questions before continuing.
+
+        Please answer all questions before continuing.
+
       </p>
 
 
@@ -822,6 +1274,7 @@
 
       </div>
 
+
     </div>
 
   </div>
@@ -833,6 +1286,37 @@
 
   <script>
 
+
+    // =====================================
+    // N8N WEBHOOK
+    // =====================================
+
+    const webhookUrl =
+      "https://n8n.media.tuwien.ac.at/webhook/2dd3fbb8-eda9-4683-9a0d-efb750c06225";
+
+
+    // =====================================
+    // EXISTING SESSION DATA
+    // =====================================
+
+    const sessionId =
+      localStorage.getItem(
+        "session_id"
+      );
+
+
+    const consent =
+      localStorage.getItem(
+        "consent"
+      );
+
+
+    const condition =
+      localStorage.getItem(
+        "condition"
+      );
+
+
     // =====================================
     // ELEMENTS
     // =====================================
@@ -843,15 +1327,24 @@
       );
 
 
+    const ageInput =
+      document.getElementById(
+        "age"
+      );
+
+
     // =====================================
-    // REQUIRED QUESTIONS
+    // REQUIRED RATING QUESTIONS
     // =====================================
 
     const requiredQuestions = [
 
       "provocativeness",
+
       "negativity",
+
       "credibility",
+
       "ai_generated"
 
     ];
@@ -863,7 +1356,39 @@
 
     function checkCompletion() {
 
-      const allAnswered =
+
+      // -----------------------------
+      // AGE
+      // -----------------------------
+
+      const age =
+        ageInput.value.trim();
+
+
+      const validAge =
+
+        age !== "" &&
+
+        Number(age) >= 18 &&
+
+        Number(age) <= 100;
+
+
+      // -----------------------------
+      // GENDER
+      // -----------------------------
+
+      const gender =
+        document.querySelector(
+          'input[name="gender"]:checked'
+        );
+
+
+      // -----------------------------
+      // RATINGS
+      // -----------------------------
+
+      const allRatingsAnswered =
         requiredQuestions.every(
           question => {
 
@@ -874,13 +1399,30 @@
           }
         );
 
+
+      // -----------------------------
+      // ENABLE BUTTON
+      // -----------------------------
+
       submitBtn.disabled =
-        !allAnswered;
+        !(
+          validAge &&
+          gender &&
+          allRatingsAnswered
+        );
 
     }
 
 
-    // Listen for all radio changes
+    // =====================================
+    // LISTEN FOR CHANGES
+    // =====================================
+
+    ageInput.addEventListener(
+      "input",
+      checkCompletion
+    );
+
 
     document
       .querySelectorAll(
@@ -904,7 +1446,8 @@
 
     submitBtn.addEventListener(
       "click",
-      () => {
+      async () => {
+
 
         if (
           submitBtn.disabled
@@ -915,65 +1458,251 @@
         }
 
 
-        // ================================
-        // COLLECT RESPONSES
-        // ================================
+        // =================================
+        // RECHECK SESSION
+        // =================================
 
-        const responses = {};
+        const currentSessionId =
+          localStorage.getItem(
+            "session_id"
+          );
 
 
-        requiredQuestions.forEach(
-          question => {
+        if (
+          !currentSessionId
+        ) {
 
-            const selected =
-              document.querySelector(
-                `input[name="${question}"]:checked`
-              );
+          alert(
+            "Your session could not be identified. Please restart the study."
+          );
 
-            responses[question] =
-              selected.value;
+          return;
+
+        }
+
+
+        // =================================
+        // RECHECK CONDITION
+        // =================================
+
+        const currentCondition =
+          localStorage.getItem(
+            "condition"
+          );
+
+
+        if (
+          !currentCondition
+        ) {
+
+          alert(
+            "Your study condition could not be identified. Please restart the study."
+          );
+
+          return;
+
+        }
+
+
+        // =================================
+        // COLLECT AGE
+        // =================================
+
+        const age =
+          ageInput.value.trim();
+
+
+        // =================================
+        // COLLECT GENDER
+        // =================================
+
+        const gender =
+          document.querySelector(
+            'input[name="gender"]:checked'
+          ).value;
+
+
+        // =================================
+        // COLLECT RATINGS
+        // =================================
+
+        const provocativeness =
+          document.querySelector(
+            'input[name="provocativeness"]:checked'
+          ).value;
+
+
+        const negativity =
+          document.querySelector(
+            'input[name="negativity"]:checked'
+          ).value;
+
+
+        const credibility =
+          document.querySelector(
+            'input[name="credibility"]:checked'
+          ).value;
+
+
+        const aiGenerated =
+          document.querySelector(
+            'input[name="ai_generated"]:checked'
+          ).value;
+
+
+        // =================================
+        // DISABLE BUTTON
+        // =================================
+
+        submitBtn.disabled =
+          true;
+
+
+        submitBtn.innerText =
+          "Saving...";
+
+
+        // =================================
+        // SEND TO N8N
+        // =================================
+
+        try {
+
+
+          const response =
+            await fetch(
+              webhookUrl,
+              {
+
+                method:
+                  "POST",
+
+                headers:
+                  {
+                    "Content-Type":
+                      "application/json"
+                  },
+
+                body:
+                  JSON.stringify({
+
+                    // -----------------------
+                    // ACTION
+                    // -----------------------
+
+                    action:
+                      "save_ratings",
+
+
+                    // -----------------------
+                    // EXISTING SESSION DATA
+                    // -----------------------
+
+                    session_id:
+                      currentSessionId,
+
+                    consent:
+                      consent,
+
+                    condition:
+                      currentCondition,
+
+
+                    // -----------------------
+                    // DEMOGRAPHICS
+                    // -----------------------
+
+                    age:
+                      age,
+
+                    gender:
+                      gender,
+
+
+                    // -----------------------
+                    // RATINGS
+                    // -----------------------
+
+                    provocativeness:
+                      provocativeness,
+
+                    negativity:
+                      negativity,
+
+                    credibility:
+                      credibility,
+
+                    ai_generated:
+                      aiGenerated,
+
+
+                    // -----------------------
+                    // TIMESTAMP
+                    // -----------------------
+
+                    ratings_completed_at:
+                      new Date().toISOString()
+
+                  })
+
+              }
+            );
+
+
+          // =================================
+          // CHECK RESPONSE
+          // =================================
+
+          if (
+            !response.ok
+          ) {
+
+            throw new Error(
+              "Server returned an error: " +
+              response.status
+            );
 
           }
-        );
 
 
-        // ================================
-        // SAVE LOCALLY FOR NOW
-        // ================================
-
-        localStorage.setItem(
-          "pilot_provocativeness",
-          responses.provocativeness
-        );
-
-        localStorage.setItem(
-          "pilot_negativity",
-          responses.negativity
-        );
-
-        localStorage.setItem(
-          "pilot_credibility",
-          responses.credibility
-        );
-
-        localStorage.setItem(
-          "pilot_ai_generated",
-          responses.ai_generated
-        );
-
-        localStorage.setItem(
-          "pilot_ratings_timestamp",
-          new Date().toISOString()
-        );
+          console.log(
+            "Ratings successfully sent."
+          );
 
 
-        // ================================
-        // REDIRECT
-        // ================================
+          // =================================
+          // REDIRECT
+          // =================================
 
-        window.location.replace(
-          "thank-you.html"
-        );
+          window.location.replace(
+            "thankyou.html"
+          );
+
+
+        }
+
+        catch (error) {
+
+
+          console.error(
+            "Error saving ratings:",
+            error
+          );
+
+
+          submitBtn.disabled =
+            false;
+
+
+          submitBtn.innerText =
+            "Submit";
+
+
+          alert(
+            "There was an error saving your responses. Please try again."
+          );
+
+        }
 
       }
     );
@@ -989,6 +1718,7 @@
       location.href
     );
 
+
     window.onpopstate =
       function () {
 
@@ -996,7 +1726,9 @@
 
       };
 
+
   </script>
+
 
 </body>
 
