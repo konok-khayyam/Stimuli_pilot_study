@@ -411,21 +411,237 @@
       <!-- CONTINUE -->
       <!-- ============================= -->
 
-      <div class="button-container">
+      <script>
 
-        <button
-          id="continueBtn"
-          class="primary-button"
-          disabled
-        >
-          Continue
-        </button>
+/*
+==========================================
+RANDOM VIDEO ASSIGNMENT
+==========================================
+*/
 
-      </div>
+const continueBtn =
+  document.getElementById(
+    "continueBtn"
+  );
 
-    </div>
+const consent1 =
+  document.getElementById(
+    "consent1"
+  );
 
-  </div>
+const consent2 =
+  document.getElementById(
+    "consent2"
+  );
+
+const consent3 =
+  document.getElementById(
+    "consent3"
+  );
+
+
+/*
+==========================================
+CHECK CONSENT
+==========================================
+*/
+
+function checkConsent() {
+
+  const allChecked =
+    consent1.checked &&
+    consent2.checked &&
+    consent3.checked;
+
+  continueBtn.disabled =
+    !allChecked;
+
+}
+
+
+consent1.addEventListener(
+  "change",
+  checkConsent
+);
+
+consent2.addEventListener(
+  "change",
+  checkConsent
+);
+
+consent3.addEventListener(
+  "change",
+  checkConsent
+);
+
+
+/*
+==========================================
+CONTINUE
+==========================================
+*/
+
+continueBtn.addEventListener(
+  "click",
+  () => {
+
+    // =====================================
+    // SAFETY CHECK
+    // =====================================
+
+    if (
+      !consent1.checked ||
+      !consent2.checked ||
+      !consent3.checked
+    ) {
+
+      return;
+
+    }
+
+
+    // =====================================
+    // GENERATE PARTICIPANT ID
+    // =====================================
+
+    const participantId =
+      crypto.randomUUID();
+
+
+    // =====================================
+    // RANDOM ASSIGNMENT
+    // =====================================
+
+    const randomNumber =
+      Math.random();
+
+
+    let condition;
+
+    let video;
+
+
+    if (
+      randomNumber < 0.5
+    ) {
+
+      // BBC CONTROL
+
+      condition =
+        "bbc";
+
+      video =
+        "BBC";
+
+    }
+
+    else {
+
+      // PROVOCATIVE
+
+      condition =
+        "prov";
+
+      video =
+        "PROV";
+
+    }
+
+
+    // =====================================
+    // ASSIGNMENT TIMESTAMP
+    // =====================================
+
+    const assignmentTimestamp =
+      new Date().toISOString();
+
+
+    // =====================================
+    // STORE PARTICIPANT DATA
+    // =====================================
+
+    localStorage.setItem(
+      "pilot_participant_id",
+      participantId
+    );
+
+    localStorage.setItem(
+      "pilot_condition",
+      condition
+    );
+
+    localStorage.setItem(
+      "pilot_video",
+      video
+    );
+
+    localStorage.setItem(
+      "pilot_assignment_timestamp",
+      assignmentTimestamp
+    );
+
+
+    // =====================================
+    // STORE CONSENT
+    // =====================================
+
+    localStorage.setItem(
+      "pilot_consent",
+      "yes"
+    );
+
+    localStorage.setItem(
+      "pilot_consent_timestamp",
+      assignmentTimestamp
+    );
+
+
+    // =====================================
+    // REDIRECT
+    // =====================================
+
+    if (
+      condition === "bbc"
+    ) {
+
+      window.location.replace(
+        "video1.html"
+      );
+
+    }
+
+    else {
+
+      window.location.replace(
+        "video2.html"
+      );
+
+    }
+
+  }
+);
+
+
+/*
+==========================================
+BLOCK BACK NAVIGATION
+==========================================
+*/
+
+history.pushState(
+  null,
+  null,
+  location.href
+);
+
+window.onpopstate =
+  function () {
+
+    history.go(1);
+
+  };
+
+</script>
 
 
   <!-- ============================= -->
