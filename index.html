@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>Study Information</title>
+  <title>Video Perception Study</title>
 
   <style>
 
@@ -38,6 +38,7 @@
 
     }
 
+
     .page-container {
 
       width: 100%;
@@ -53,6 +54,7 @@
       padding: 40px 20px;
 
     }
+
 
     .content-card {
 
@@ -82,6 +84,7 @@
 
     }
 
+
     .progress-bar {
 
       width: 100%;
@@ -96,6 +99,7 @@
 
     }
 
+
     .progress-fill {
 
       width: 20%;
@@ -107,6 +111,7 @@
       border-radius: 10px;
 
     }
+
 
     .progress-text {
 
@@ -137,6 +142,7 @@
 
     }
 
+
     .page-description {
 
       margin: 0 0 30px;
@@ -151,16 +157,17 @@
 
 
     /* ============================= */
-    /* INFORMATION */
+    /* SECTION */
     /* ============================= */
 
-    .info-section {
+    .section {
 
       margin-bottom: 28px;
 
     }
 
-    .info-section h2 {
+
+    .section-title {
 
       margin: 0 0 10px;
 
@@ -170,7 +177,8 @@
 
     }
 
-    .info-section p {
+
+    .section-text {
 
       margin: 0;
 
@@ -184,14 +192,14 @@
 
 
     /* ============================= */
-    /* CONSENT */
+    /* NOTICE */
     /* ============================= */
 
-    .consent-box {
+    .notice {
 
-      margin-top: 30px;
+      margin-top: 28px;
 
-      padding: 20px;
+      padding: 18px 20px;
 
       background: #f8f9fa;
 
@@ -201,7 +209,43 @@
 
     }
 
-    .consent-label {
+
+    .notice-title {
+
+      margin: 0 0 8px;
+
+      font-size: 16px;
+
+      font-weight: 650;
+
+    }
+
+
+    .notice-text {
+
+      margin: 0;
+
+      font-size: 14px;
+
+      line-height: 1.6;
+
+      color: #555;
+
+    }
+
+
+    /* ============================= */
+    /* CONSENT */
+    /* ============================= */
+
+    .consent-section {
+
+      margin-top: 30px;
+
+    }
+
+
+    .consent-item {
 
       display: flex;
 
@@ -209,25 +253,35 @@
 
       gap: 12px;
 
+      margin-bottom: 17px;
+
       cursor: pointer;
-
-      font-size: 15px;
-
-      line-height: 1.55;
-
-      color: #333;
 
     }
 
-    .consent-label input {
+
+    .consent-item input {
 
       width: 18px;
 
       height: 18px;
 
-      margin-top: 2px;
+      margin-top: 3px;
 
       flex-shrink: 0;
+
+      cursor: pointer;
+
+    }
+
+
+    .consent-item label {
+
+      font-size: 15px;
+
+      line-height: 1.55;
+
+      color: #444;
 
       cursor: pointer;
 
@@ -247,6 +301,7 @@
       justify-content: flex-end;
 
     }
+
 
     .primary-button {
 
@@ -270,11 +325,13 @@
 
     }
 
+
     .primary-button:hover:not(:disabled) {
 
       opacity: 0.85;
 
     }
+
 
     .primary-button:disabled {
 
@@ -285,21 +342,13 @@
     }
 
 
-    /* ============================= */
-    /* STATUS */
-    /* ============================= */
-
-    .status-message {
+    .required-note {
 
       margin-top: 18px;
 
-      font-size: 14px;
+      font-size: 13px;
 
-      color: #777;
-
-      text-align: right;
-
-      display: none;
+      color: #888;
 
     }
 
@@ -316,19 +365,22 @@
 
       }
 
+
       .content-card {
 
-        padding: 28px 20px;
+        padding: 30px 22px;
 
         border-radius: 12px;
 
       }
 
+
       .page-title {
 
-        font-size: 26px;
+        font-size: 27px;
 
       }
+
 
       .page-description {
 
@@ -336,17 +388,6 @@
 
       }
 
-      .info-section h2 {
-
-        font-size: 17px;
-
-      }
-
-      .info-section p {
-
-        font-size: 14px;
-
-      }
 
       .button-container {
 
@@ -354,15 +395,10 @@
 
       }
 
+
       .primary-button {
 
         width: 100%;
-
-      }
-
-      .status-message {
-
-        text-align: center;
 
       }
 
@@ -395,9 +431,7 @@
         </div>
 
         <p class="progress-text">
-
-          Step 1 of 3 — Study information
-
+          Step 1 of 3 — Welcome
         </p>
 
       </div>
@@ -408,9 +442,7 @@
       <!-- ============================= -->
 
       <h1 class="page-title">
-
-        Welcome to the Study
-
+        Video Perception Study
       </h1>
 
 
@@ -418,8 +450,12 @@
 
         Thank you for your interest in participating.
 
-        Please read the following information before
-        deciding whether you would like to take part.
+        In this short study, you will be asked to watch
+        one short video and answer a few questions about
+        your perception of the video.
+
+        The study should take approximately
+        3–5 minutes to complete.
 
       </p>
 
@@ -428,44 +464,19 @@
       <!-- ABOUT THE STUDY -->
       <!-- ============================= -->
 
-      <div class="info-section">
+      <div class="section">
 
-        <h2>
+        <h2 class="section-title">
           About the study
         </h2>
 
-        <p>
+        <p class="section-text">
 
-          This study examines how people perceive and
-          evaluate online video content.
+          The purpose of this study is to understand how
+          people perceive and evaluate online video content.
 
-          You will be asked to watch one short video
-          and answer several questions about your
-          impressions of it.
-
-        </p>
-
-      </div>
-
-
-      <!-- ============================= -->
-      <!-- PROCEDURE -->
-      <!-- ============================= -->
-
-      <div class="info-section">
-
-        <h2>
-          What will you do?
-        </h2>
-
-        <p>
-
-          After providing your consent, you will be
-          randomly assigned to watch one of two videos.
-
-          After watching the video, you will answer
-          several questions about how you perceived
-          the content.
+          You will be shown one video and asked to provide
+          your impressions of it afterward.
 
         </p>
 
@@ -473,19 +484,45 @@
 
 
       <!-- ============================= -->
-      <!-- TIME -->
+      <!-- PARTICIPATION -->
       <!-- ============================= -->
 
-      <div class="info-section">
+      <div class="section">
 
-        <h2>
-          Duration
+        <h2 class="section-title">
+          Your participation
         </h2>
 
-        <p>
+        <p class="section-text">
 
-          The study should take approximately
-          3–5 minutes to complete.
+          Participation is voluntary. You may choose not
+          to participate or stop participating at any time.
+
+          There are no right or wrong answers. We are
+          interested in your personal impressions of the
+          video you are shown.
+
+        </p>
+
+      </div>
+
+
+      <!-- ============================= -->
+      <!-- CONTENT NOTICE -->
+      <!-- ============================= -->
+
+      <div class="notice">
+
+        <p class="notice-title">
+          Content notice
+        </p>
+
+        <p class="notice-text">
+
+          The video may contain discussion or imagery
+          relating to immigration, social issues, or other
+          potentially sensitive topics. Please consider
+          this before deciding whether to participate.
 
         </p>
 
@@ -496,45 +533,75 @@
       <!-- CONSENT -->
       <!-- ============================= -->
 
-      <div class="consent-box">
+      <div class="consent-section">
 
-        <label
-          class="consent-label"
-          for="consentCheckbox"
-        >
+        <h2 class="section-title">
+          Consent
+        </h2>
+
+
+        <div class="consent-item">
 
           <input
             type="checkbox"
-            id="consentCheckbox"
+            id="consent1"
           >
 
-          <span>
+          <label for="consent1">
 
             I have read and understood the information
-            provided above, and I voluntarily agree to
-            participate in this study.
+            provided above.
 
-          </span>
+          </label>
 
-        </label>
+        </div>
+
+
+        <div class="consent-item">
+
+          <input
+            type="checkbox"
+            id="consent2"
+          >
+
+          <label for="consent2">
+
+            I understand that participation is voluntary
+            and that I may stop participating at any time.
+
+          </label>
+
+        </div>
+
+
+        <div class="consent-item">
+
+          <input
+            type="checkbox"
+            id="consent3"
+          >
+
+          <label for="consent3">
+
+            I agree to participate in this study and allow
+            my responses to be used for research purposes.
+
+          </label>
+
+        </div>
 
       </div>
 
 
-      <!-- ============================= -->
-      <!-- STATUS -->
-      <!-- ============================= -->
+      <p class="required-note">
 
-      <p
-        id="statusMessage"
-        class="status-message"
-      >
-        Preparing the study...
+        Please confirm all three statements to continue.
+
       </p>
 
 
       <!-- ============================= -->
-      <!-- BUTTON -->
+      <!-- CONTINUE BUTTON -->
       <!-- ============================= -->
 
       <div class="button-container">
@@ -554,7 +621,6 @@
 
     </div>
 
-
   </div>
 
 
@@ -566,58 +632,43 @@
 
 
     // =====================================
-    // N8N WEBHOOK
-    // =====================================
-
-    const WEBHOOK_URL =
-      "https://n8n.media.tuwien.ac.at/webhook/2dd3fbb8-eda9-4683-9a0d-efb750c06225";
-
-
-    // =====================================
     // ELEMENTS
     // =====================================
 
-    const consentCheckbox =
+    const consent1 =
       document.getElementById(
-        "consentCheckbox"
+        "consent1"
       );
+
+
+    const consent2 =
+      document.getElementById(
+        "consent2"
+      );
+
+
+    const consent3 =
+      document.getElementById(
+        "consent3"
+      );
+
 
     const continueBtn =
       document.getElementById(
         "continueBtn"
       );
 
-    const statusMessage =
-      document.getElementById(
-        "statusMessage"
-      );
+
+    // =====================================
+    // N8N WEBHOOK
+    // =====================================
+
+    const webhookUrl =
+      "https://n8n.media.tuwien.ac.at/webhook/2dd3fbb8-eda9-4683-9a0d-efb750c06225";
 
 
     // =====================================
-    // CREATE INTERNAL PARTICIPANT ID
-    // =====================================
-
-    let participantId =
-      localStorage.getItem(
-        "pilot_participant_id"
-      );
-
-
-    if (!participantId) {
-
-      participantId =
-        crypto.randomUUID();
-
-      localStorage.setItem(
-        "pilot_participant_id",
-        participantId
-      );
-
-    }
-
-
-    // =====================================
-    // GET PROLIFIC ID
+    // PROLIFIC ID
     // =====================================
 
     const urlParams =
@@ -632,11 +683,9 @@
       );
 
 
-    // =====================================
-    // STORE PROLIFIC ID
-    // =====================================
-
-    if (prolificPid) {
+    if (
+      prolificPid
+    ) {
 
       localStorage.setItem(
         "prolific_pid",
@@ -646,10 +695,6 @@
     }
 
 
-    // =====================================
-    // GET EXISTING PROLIFIC ID
-    // =====================================
-
     const storedProlificPid =
       localStorage.getItem(
         "prolific_pid"
@@ -657,17 +702,45 @@
 
 
     // =====================================
-    // ENABLE CONTINUE AFTER CONSENT
+    // CHECK CONSENT
     // =====================================
 
-    consentCheckbox.addEventListener(
+    function checkConsent() {
+
+
+      const allChecked =
+
+        consent1.checked &&
+        consent2.checked &&
+        consent3.checked;
+
+
+      continueBtn.disabled =
+        !allChecked;
+
+
+    }
+
+
+    // =====================================
+    // CONSENT LISTENERS
+    // =====================================
+
+    consent1.addEventListener(
       "change",
-      () => {
+      checkConsent
+    );
 
-        continueBtn.disabled =
-          !consentCheckbox.checked;
 
-      }
+    consent2.addEventListener(
+      "change",
+      checkConsent
+    );
+
+
+    consent3.addEventListener(
+      "change",
+      checkConsent
     );
 
 
@@ -677,11 +750,19 @@
 
     continueBtn.addEventListener(
       "click",
-      async () => {
+      async function () {
 
+
+        // =================================
+        // SAFETY CHECK
+        // =================================
 
         if (
-          !consentCheckbox.checked
+
+          !consent1.checked ||
+          !consent2.checked ||
+          !consent3.checked
+
         ) {
 
           return;
@@ -689,157 +770,160 @@
         }
 
 
-        // Disable button immediately
-        // to prevent duplicate submissions
+        // =================================
+        // DISABLE BUTTON
+        // =================================
 
-        continueBtn.disabled = true;
+        continueBtn.disabled =
+          true;
 
         continueBtn.innerText =
-          "Please wait...";
+          "Starting...";
 
 
-        statusMessage.style.display =
-          "block";
+        // =================================
+        // GENERATE PARTICIPANT ID
+        // =================================
 
-        statusMessage.innerText =
-          "Preparing your study...";
+        const participantId =
+          crypto.randomUUID();
 
 
-        // =====================================
-        // DATA SENT TO N8N
-        // =====================================
+        // =================================
+        // RANDOM ASSIGNMENT
+        // =================================
 
-        const data = {
+        let condition;
 
-          action:
-            "save_welcome",
 
-          participant_id:
-            participantId,
+        if (
+          Math.random() < 0.5
+        ) {
 
-          prolific_pid:
-            storedProlificPid || null,
+          condition =
+            "bbc";
 
-          consent:
-            "yes"
+        }
 
-        };
+        else {
 
+          condition =
+            "prov";
+
+        }
+
+
+        // =================================
+        // STORE LOCALLY
+        // =================================
+
+        localStorage.setItem(
+          "pilot_participant_id",
+          participantId
+        );
+
+
+        localStorage.setItem(
+          "pilot_consent",
+          "yes"
+        );
+
+
+        localStorage.setItem(
+          "pilot_condition",
+          condition
+        );
+
+
+        // =================================
+        // SEND DATA TO N8N
+        // =================================
 
         try {
 
 
-          // =====================================
-          // SEND TO N8N
-          // =====================================
+          console.log(
+            "Sending participant data:",
+            {
+
+              participant_id:
+                participantId,
+
+              prolific_pid:
+                storedProlificPid,
+
+              consent:
+                "yes",
+
+              condition:
+                condition
+
+            }
+          );
+
 
           const response =
             await fetch(
-              WEBHOOK_URL,
+              webhookUrl,
               {
 
                 method:
                   "POST",
 
-                headers: {
-
-                  "Content-Type":
-                    "application/json"
-
-                },
+                headers:
+                  {
+                    "Content-Type":
+                      "application/json"
+                  },
 
                 body:
-                  JSON.stringify(
-                    data
-                  )
+                  JSON.stringify({
+
+                    action:
+                      "save_welcome",
+
+                    participant_id:
+                      participantId,
+
+                    prolific_pid:
+                      storedProlificPid || null,
+
+                    consent:
+                      "yes",
+
+                    condition:
+                      condition
+
+                  })
 
               }
             );
 
 
-          // =====================================
+          // =================================
           // CHECK RESPONSE
-          // =====================================
+          // =================================
 
           if (
             !response.ok
           ) {
 
             throw new Error(
-              "Server returned an error."
+              "n8n returned HTTP " +
+              response.status
             );
 
           }
-
-
-          // =====================================
-          // READ N8N RESPONSE
-          // =====================================
-
-          const result =
-            await response.json();
 
 
           console.log(
-            "N8N response:",
-            result
+            "Participant data saved successfully."
           );
 
 
-          // =====================================
-          // GET ASSIGNED CONDITION
-          // =====================================
-
-          const condition =
-            result.condition;
-
-
-          if (
-            condition !== "bbc"
-            &&
-            condition !== "prov"
-          ) {
-
-            throw new Error(
-              "Invalid condition received from server."
-            );
-
-          }
-
-
-          // =====================================
-          // SAVE CONDITION
-          // =====================================
-
-          localStorage.setItem(
-            "pilot_condition",
-            condition
-          );
-
-
-          // =====================================
-          // SAVE CONSENT
-          // =====================================
-
-          localStorage.setItem(
-            "pilot_consent",
-            "yes"
-          );
-
-
-          // =====================================
-          // SAVE TIMESTAMP
-          // =====================================
-
-          localStorage.setItem(
-            "pilot_welcome_timestamp",
-            new Date().toISOString()
-          );
-
-
-          // =====================================
+          // =================================
           // REDIRECT
-          // =====================================
+          // =================================
 
           if (
             condition === "bbc"
@@ -851,9 +935,7 @@
 
           }
 
-          else if (
-            condition === "prov"
-          ) {
+          else {
 
             window.location.replace(
               "video2.html"
@@ -865,29 +947,33 @@
         }
 
 
+        // =================================
+        // ERROR
+        // =================================
+
         catch (
           error
         ) {
 
 
           console.error(
-            "Welcome page error:",
+            "Error saving participant data:",
             error
           );
-
-
-          statusMessage.style.display =
-            "block";
-
-          statusMessage.innerText =
-            "Something went wrong. Please try again.";
 
 
           continueBtn.disabled =
             false;
 
+
           continueBtn.innerText =
             "Continue";
+
+
+          alert(
+            "There was a problem starting the study. Please try again."
+          );
+
 
         }
 
